@@ -10,33 +10,112 @@
 </head>
 <body>
     <header class="main-header">
-        <!-- Header content... -->
+        <div class="container">
+            <a href="/" class="logo-link"><img src="/images/logo/logo.svg" alt="YourCompanyName Logo" class="logo-img"></a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/solutions.html">Solutions</a></li>
+                    <li><a href="/support.html" class="active">Support</a></li>
+                    <li><a href="/news.html">News</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html" class="cta-button nav-cta">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation"><span class="hamburger"></span></button>
+        </div>
     </header>
     <main>
         <section class="page-header" style="background-image: url('/images/backgrounds/hero-background.svg');">
             <div class="container">
                 <h1>Technical Support</h1>
                 <p>Your resource hub for Firstack application knowledge.</p>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Support</li>
-                    </ol>
-                </nav>
+                <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item active" aria-current="page">Support</li></ol></nav>
             </div>
         </section>
 
         <section class="content-list-section">
             <div class="container">
                 <div class="list-container">
-                    <!-- Support articles will be added in a later batch -->
-                    <div class="placeholder-text">Support articles will be loaded in Batch 6.</div>
+
+                    <article class="list-item-card">
+                        <div class="list-item-content">
+                            <h3 class="list-item-title"><a href="/support/guides/how-to-select-firstack-drivers.html">How to Select the Right Firstack Gate Driver for Your Project</a></h3>
+                            <p class="list-item-summary">A step-by-step guide to navigating the selection process and finding the perfect driver for your power electronics design by considering module type, voltage, and interface.</p>
+                            <span class="list-item-category">Selection Guide</span>
+                        </div>
+                    </article>
+
+                    <article class="list-item-card">
+                        <div class="list-item-content">
+                            <h3 class="list-item-title"><a href="/support/guides/sic-mosfet-driving-challenges.html">SiC MOSFET Driving: Challenges and Solutions</a></h3>
+                            <p class="list-item-summary">Unlocking the performance of Silicon Carbide requires a driver that can handle its unique demands. This guide covers high dV/dt, CMTI, and gate voltage requirements.</p>
+                            <span class="list-item-category">SiC Application Technology</span>
+                        </div>
+                    </article>
+
+                    <article class="list-item-card">
+                        <div class="list-item-content">
+                            <h3 class="list-item-title"><a href="/support/guides/igbt-paralleling-techniques.html">Key Techniques for Paralleling IGBT Modules</a></h3>
+                            <p class="list-item-summary">Achieve reliable current sharing and avoid common pitfalls when designing high-current systems with parallel IGBTs, focusing on layout and gate drive considerations.</p>
+                            <span class="list-item-category">Application Note</span>
+                        </div>
+                    </article>
+
+                    <article class="list-item-card">
+                        <div class="list-item-content">
+                            <h3 class="list-item-title"><a href="/support/guides/desat-protection-guide.html">Firstack Driver DESAT Protection: A Practical Guide</a></h3>
+                            <p class="list-item-summary">Learn how desaturation detection works to protect your IGBTs from short circuits and what you need to consider for a robust implementation.</p>
+                            <span class="list-item-category">Problem Solving (FAQ)</span>
+                        </div>
+                    </article>
+
+                    <article class="list-item-card">
+                        <div class="list-item-content">
+                            <h3 class="list-item-title"><a href="/support/casestudies/rail-auxiliary-converter-casestudy.html">Firstack Drivers in Rail Auxiliary Converters: A Reliability Case Study</a></h3>
+                            <p class="list-item-summary">How a leading rail systems integrator improved the reliability and serviceability of their onboard auxiliary power supplies using Firstack drivers.</p>
+                            <span class="list-item-category">Case Study</span>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
     </main>
     <footer class="main-footer">
-        <!-- Footer content... -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About YourCompanyName</h4>
+                    <p>As an authorized Firstack agent, we are dedicated to providing cutting-edge power electronic components and unparalleled technical support to our clients worldwide.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/support.html">Technical Support</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Product Lines</h4>
+                    <ul>
+                        <li><a href="/products.html#gate-drivers">Gate Drivers</a></li>
+                        <li><a href="/products.html#driver-cores">Driver Cores</a></li>
+                        <li><a href="/products.html#test-equipment">Test Equipment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>123 Tech Avenue<br>Innovate City, EC 12345<br>Email: <a href="mailto:sales@yourcompany.com">sales@yourcompany.com</a><br>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YourCompanyName. All Rights Reserved. | Authorized Firstack Distributor</p>
+            </div>
+        </div>
     </footer>
     <script src="/js/main.js"></script>
 </body>
