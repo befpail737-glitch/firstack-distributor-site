@@ -1,23 +1,47 @@
-修改如下：
-打开您本地项目的所有 .html 文件。 您可以使用一个好的代码编辑器（如 VS Code）的“全局搜索和替换”功能来批量完成这个操作。
-修改CSS链接：
-查找所有： href="css/style.css"
-替换为： href="/css/style.css" (注意前面的斜杠)
-查找所有： href="../css/style.css"
-替换为： href="/css/style.css"
-查找所有： href="../../css/style.css"
-替换为： href="/css/style.css"
-修改JavaScript链接：
-查找所有： src="js/main.js" -> 替换为： src="/js/main.js"
-查找所有： src="../js/main.js" -> 替换为： src="/js/main.js"
-查找所有： src="../../js/main.js" -> 替换为： src="/js/main.js"
-对 tabs.js 做同样的操作。
-修改图片和Logo链接：
-查找所有： src="images/... -> 替换为： src="/images/...
-查找所有： src="../images/... -> 替换为： src="/images/...
-查找所有： src="../../images/... -> 替换为： src="/images/...
-修改导航和所有页面间链接：
-查找所有： href="index.html" -> 替换为： href="/"
-查找所有： href="products.html" -> 替换为： href="/products.html"
-查找所有： href="solutions/1500v-solar-pcs-solution.html" -> 替换为： href="/solutions/1500v-solar-pcs-solution.html"
-原则： 确保所有页面间的跳转链接 href 都以 / 开头（或者在根目录的页面可以用相对路径）。最简单的方法是所有链接都用根相对路径。
+修复所有页面的导航栏（最关键）
+复制标准<header>： 打开您本地的 index.html 文件，完整地复制从 <header class="main-header"> 开始，到 </header> 结束的所有代码。它看起来是这样的：
+code
+Html
+<header class="main-header">
+    <div class="container">
+        <a href="/" class="logo-link">
+            <img src="/images/logo/logo.svg" alt="YourCompanyName Logo - Authorized Firstack Distributor" class="logo-img">
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/products.html">Products</a></li>
+                <li><a href="/solutions.html">Solutions</a></li>
+                <li><a href="/support.html">Support</a></li>
+                <li><a href="/news.html">News</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html" class="cta-button nav-cta">Contact Us</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+            <span class="hamburger"></span>
+        </button>
+    </div>
+</header>
+批量替换： 现在，您需要打开以下所有HTML文件，找到它们各自的（不完整的）<header>...</header>部分，然后用您刚刚复制的这段完整的代码彻底替换掉它。
+about.html
+contact.html
+products.html
+solutions.html
+support.html
+news.html
+所有在 products/ 目录下的详情页 (共5个)
+所有在 solutions/ 目录下的详情页 (共5个)
+所有在 support/ 目录下的详情页 (共5个)
+所有在 news/ 目录下的详情页 (共5个)
+微调 active 状态（可选，但建议）： 为了让当前页面的导航高亮，您需要手动修改每个文件里导航栏的 class="active"。
+例如，在编辑 about.html 时，您需要把 active 从 Home 移到 About Us 上：
+code
+Html
+<!-- 在 about.html 文件里 -->
+...
+<li><a href="/">Home</a></li>
+...
+<li><a href="/about.html" class="active">About Us</a></li>
+...
+对 products.html, solutions.html 等所有主页面都做同样的操作。文章详情页可以不设置active状态，或者让其父级导航高亮（例如，在一篇解决方案文章里，让 "Solutions" 导航高亮）。
