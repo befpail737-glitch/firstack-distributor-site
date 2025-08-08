@@ -1,0 +1,120 @@
+
+```css
+:root {
+    --primary-color: #005A9C;
+    --dark-color: #232931;
+    --light-color: #FFFFFF;
+    --grey-bg-color: #f4f7f9;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--grey-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    perspective: 1000px;
+}
+
+.login-box {
+    width: 360px;
+    padding: 40px;
+    background: var(--light-color);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.5s;
+}
+
+.login-box:hover {
+    transform: translateY(-5px);
+}
+
+.admin-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0 0 30px 0;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--dark-color);
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background: transparent;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #6c757d;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+.input-group input:focus {
+    border-bottom-color: var(--primary-color);
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--light-color);
+    background: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background: #004a80;
+}
+
+.message {
+    margin-top: 20px;
+    font-weight: 600;
+    min-height: 20px;
+}
+
+.message.success {
+    color: var(--success-color);
+}
+
+.message.error {
+    color: var(--error-color);
+}

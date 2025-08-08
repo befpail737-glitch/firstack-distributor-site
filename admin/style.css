@@ -1,0 +1,136 @@
+/* --- Global Styles & Variables (from Batch 3) --- */
+:root {
+    --primary-color: #005A9C;
+    --secondary-color: #00A3E0;
+    --dark-color: #232931;
+    --light-color: #FFFFFF;
+    --grey-bg-color: #f4f7f9;
+    --text-color: #333333;
+    --heading-font: 'Arial', sans-serif;
+    --body-font: 'Arial', sans-serif;
+    --border-radius: 5px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+/* ... all other base styles from Batch 4 ... */
+
+/* --- List Pages (Solutions, Support, News) --- */
+.content-list-section { padding: 80px 0; }
+.list-container { display: grid; gap: 30px; }
+.list-item-card {
+    display: flex;
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+.list-item-card:hover { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
+.list-item-content { padding: 30px; }
+.list-item-title a { color: var(--dark-color); text-decoration: none; }
+.list-item-title a:hover { color: var(--primary-color); }
+.list-item-summary { color: #555; margin: 15px 0; }
+.list-item-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: #e3f2fd;
+    padding: 5px 10px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+/* --- Article & Solution Detail Pages --- */
+.article-header {
+    padding: 80px 0;
+    text-align: center;
+    color: var(--light-color);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.article-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 90, 156, 0.88); }
+.article-header .container { position: relative; z-index: 2; }
+.article-meta span {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.article-header h1 {
+    color: var(--light-color);
+    font-size: 3rem;
+    max-width: 900px;
+    margin: 0 auto 15px auto;
+}
+.article-summary {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.article-content-section { padding: 80px 0; }
+.article-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 60px;
+}
+.article-body { line-height: 1.8; font-size: 1.1rem; }
+.article-body h2 { font-size: 2rem; margin-top: 40px; margin-bottom: 20px; color: var(--primary-color); }
+.article-body h3 { font-size: 1.6rem; margin-top: 30px; margin-bottom: 15px; }
+.article-body ul { padding-left: 25px; }
+.article-body ul li { margin-bottom: 12px; }
+.article-body a { font-weight: 600; text-decoration: underline; }
+
+.diagram-container { text-align: center; margin: 40px 0; }
+.diagram-container img { max-width: 100%; border: 1px solid #ddd; padding: 10px; border-radius: var(--border-radius); background: #fdfdfd; }
+.diagram-caption { font-size: 0.9rem; color: #777; font-style: italic; margin-top: 10px; }
+
+.bom-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.bom-table th, .bom-table td { padding: 12px 15px; border: 1px solid #ddd; text-align: left; }
+.bom-table thead { background-color: var(--grey-bg-color); }
+
+/* Sidebar */
+.article-sidebar .sidebar-widget {
+    background: var(--grey-bg-color);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+}
+.sidebar-widget h4 { font-size: 1.3rem; margin: 0 0 15px 0; color: var(--dark-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; }
+.sidebar-widget p { margin: 0 0 15px 0; }
+.cta-button.full-width { width: 100%; text-align: center; }
+.related-product-link { display: block; font-weight: 600; margin-bottom: 10px; }
+
+.author-box {
+    background: var(--grey-bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.author-box img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--light-color);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.author-box h4 { font-size: 1.2rem; margin: 0; }
+.author-box span { font-size: 0.9rem; color: #777; margin-bottom: 10px; display: block; }
+.author-box p { font-size: 0.95rem; line-height: 1.5; margin: 0; }
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .article-container {
+        grid-template-columns: 1fr;
+    }
+    .article-sidebar {
+        margin-top: 50px;
+        order: -1; /* Move sidebar above content on mobile if desired */
+    }
+}
+/* ... All other existing styles ... */

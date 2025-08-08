@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGBT Paralleling Techniques | Application Note | YourCompanyName</title>
+    <meta name="description" content="An application note on the key techniques for successful paralleling of IGBT modules, focusing on symmetrical layout and gate drive considerations.">
+    <meta name="keywords" content="igbt paralleling, current sharing, symmetrical layout, gate driver paralleling">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../images/logo/favicon.svg" type="image/svg+xml">
+    <!-- Schema and other head content... -->
+</head>
+<body>
+    <header class="main-header"><!-- Header --></header>
+    <main>
+        <article>
+            <section class="article-header" style="background-image: url('../../images/blog/support-banner.jpg');">
+                <div class="container">
+                    <div class="article-meta"><span>Application Note</span></div>
+                    <h1>Key Techniques for Paralleling IGBT Modules</h1>
+                    <p class="article-summary">Achieve reliable current sharing and avoid common pitfalls when designing high-current systems with parallel IGBTs.</p>
+                </div>
+            </section>
+            <section class="article-content-section">
+                <div class="container article-container">
+                    <div class="article-body">
+                        <p>For applications requiring higher current than a single IGBT module can handle, paralleling multiple modules is a common solution. However, achieving balanced current sharing, both static and dynamic, is critical for reliable operation. An imbalance can lead to thermal runaway and premature failure of one or more modules.</p>
+
+                        <h2>1. Symmetrical PCB and Busbar Layout</h2>
+                        <p>This is the most important factor for dynamic current sharing. The parasitic inductance in the path to each module must be as low and as equal as possible. Any difference in inductance will cause the current to switch at different rates, leading to a momentary imbalance during turn-on and turn-off.</p>
+                        <ul>
+                            <li><strong>Power Layout:</strong> Design your DC-link busbars and AC output connections to be physically symmetrical. The path length and geometry from the source to each module's power terminals should be identical.</li>
+                            <li><strong>Gate Drive Layout:</strong> The traces from the gate driver to each module's gate and emitter/source terminals must also be symmetrical. Keep these traces short, wide, and as close together as possible to minimize loop inductance.</li>
+                        </ul>
+
+                        <h2>2. Individual Gate Resistors</h2>
+                        <p>Never use a single gate resistor to drive multiple parallel IGBTs. Each module must have its own individual turn-on (Rg,on) and turn-off (Rg,off) resistors. This helps to dampen oscillations between the gates of the parallel devices and allows for fine-tuning of the switching speed for each module if necessary.</p>
+
+                        <h2>3. Device Selection and Thermal Management</h2>
+                        <ul>
+                            <li><strong>Matching Devices:</strong> Whenever possible, use IGBT modules from the same production batch. This ensures that key parameters like threshold voltage (Vge,th) and collector-emitter saturation voltage (Vce,sat) are closely matched, which aids in static current sharing.</li>
+                            <li><strong>Thermal Coupling:</strong> Mount the parallel modules on the same heatsink and ensure good thermal coupling. Since Vce,sat has a positive temperature coefficient in modern IGBTs, a module that gets hotter will naturally conduct less current, creating a self-balancing effect. Good thermal management reinforces this.</li>
+                        </ul>
+
+                        <h2>4. Gate Driver Considerations</h2>
+                        <p>A single, powerful gate driver can often drive a few parallel modules. Firstack drivers like the <strong>2FHD0620</strong> are explicitly designed with the capability to drive up to four modules in parallel. The key is that the driver must have sufficient peak output current to charge and discharge the combined gate capacitance of all parallel modules quickly and effectively. If a single driver is used, it's crucial that the layout from the driver to each module's gate resistors is perfectly symmetrical.</p>
+                        
+                        <p>For a very high number of parallel modules, a multi-driver solution using separate driver cores might be considered, but this adds complexity in ensuring synchronization.</p>
+                    </div>
+                    <aside class="article-sidebar"><!-- Sidebar --></aside>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="main-footer"><!-- Footer --></footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #005A9C;
+    --secondary-color: #00A3E0;
+    --dark-color: #232931;
+    --light-color: #FFFFFF;
+    --grey-bg-color: #f4f7f9;
+    --text-color: #333333;
+    --heading-font: 'Arial', sans-serif;
+    --body-font: 'Arial', sans-serif;
+    --border-radius: 5px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ... (Keep all existing global styles from Batch 3) ... */
+body, .container, h1, h2, etc...
+
+/* --- Products Page --- */
+.product-category { padding: 80px 0; }
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    text-align: left;
+}
+.category-header .category-icon img {
+    height: 80px;
+    flex-shrink: 0;
+}
+.category-title-desc h2 {
+    font-size: 2.2rem;
+    margin: 0 0 5px 0;
+}
+.category-title-desc p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0;
+}
+.category-description {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #444;
+}
+.text-link { font-weight: 700; display: inline-block; margin-top: 10px; }
+
+/* Product Table */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: var(--box-shadow);
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+.product-table th, .product-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+.product-table thead th {
+    background-color: var(--grey-bg-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+.product-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.product-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+.product-table td strong {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.product-table img {
+    height: 60px;
+    width: auto;
+    border-radius: var(--border-radius);
+}
+.cta-button.small {
+    padding: 6px 15px;
+    font-size: 0.8rem;
+}
+
+/* --- Product Detail Page --- */
+.product-detail-section { padding: 80px 0; }
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+.product-image-gallery img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+.product-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.product-short-desc {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+.product-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Product Tabs */
+.tab-nav {
+    display: flex;
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 30px;
+}
+.tab-link {
+    padding: 15px 25px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #666;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.tab-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.tab-link.active {
+    color: var(--primary-color);
+}
+.tab-link.active::after {
+    transform: scaleX(1);
+}
+.tab-content {
+    display: none;
+    line-height: 1.7;
+}
+.tab-content.active {
+    display: block;
+}
+.tab-content h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.tab-content ul {
+    padding-left: 20px;
+}
+.tab-content ul li {
+    margin-bottom: 10px;
+}
+
+.specs-table {
+    width: 100%;
+    max-width: 700px;
+}
+.specs-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+.specs-table tr td:first-child {
+    font-weight: 600;
+    color: var(--dark-color);
+    width: 40%;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+}
+.faq-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+/* ... (Keep all existing responsive styles from Batch 3) ... */
+@media (max-width: 992px) {
+    /* ... */
+}
+@media (max-width: 768px) {
+    .product-detail-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* ... And all other styles */

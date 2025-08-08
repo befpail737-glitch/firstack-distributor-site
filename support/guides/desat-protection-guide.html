@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding DESAT Protection | Firstack Driver Guide</title>
+    <meta name="description" content="A guide to understanding how DESAT (desaturation) short-circuit protection works in Firstack gate drivers and how to correctly implement it.">
+    <meta name="keywords" content="desat protection, desaturation, short circuit protection, igbt protection">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../images/logo/favicon.svg" type="image/svg+xml">
+    <!-- Schema and other head content... -->
+</head>
+<body>
+    <header class="main-header"><!-- Header --></header>
+    <main>
+        <article>
+            <section class="article-header" style="background-image: url('../../images/blog/support-banner.jpg');">
+                <div class="container">
+                    <div class="article-meta"><span>Problem Solving (FAQ)</span></div>
+                    <h1>Firstack Driver DESAT Protection: A Practical Guide</h1>
+                    <p class="article-summary">Learn how desaturation detection works to protect your IGBTs from short circuits and what you need to consider for a robust implementation.</p>
+                </div>
+            </section>
+            <section class="article-content-section">
+                <div class="container article-container">
+                    <div class="article-body">
+                        <h2>What is a Short-Circuit Event?</h2>
+                        <p>A short-circuit (or "shoot-through") is a low-impedance connection across the DC-link, often caused by a phase-to-phase fault or a failure in the complementary switch. This causes a massive current to flow through the IGBT, which, if not interrupted within microseconds, will destroy the device.</p>
+
+                        <h2>How Does DESAT Protection Work?</h2>
+                        <p>Desaturation (DESAT) detection is one of the most common and effective methods for detecting a short-circuit. It works on a simple principle:
+                        <ol>
+                            <li><strong>Normal Operation:</strong> When an IGBT is fully turned on (in saturation), its collector-emitter voltage (Vce) is very low, typically 1-4V.</li>
+                            <li><strong>Short-Circuit Condition:</strong> When a short-circuit occurs, the current rises dramatically. The IGBT can no longer maintain its low Vce, and it moves out of the saturation region into the active region. As a result, its Vce rises rapidly to a much higher voltage.</li>
+                            <li><strong>Detection:</strong> The DESAT protection circuit in the gate driver constantly monitors the IGBT's Vce. When the driver issues a turn-on command, it waits for a short "blanking time" (to allow the Vce to fall to its normal on-state level). After this time, if the circuit detects that Vce has risen above a predefined threshold (e.g., 7-9V), it registers a short-circuit fault.</li>
+                            <li><strong>Action:</strong> Upon detecting a fault, the driver immediately initiates a safe shutdown of the IGBT (often using a Two-Level Turn-off) and sends a fault signal back to the controller.</li>
+                        </ol>
+                        </p>
+
+                        <h2>Implementation with Firstack Drivers</h2>
+                        <p>Firstack drivers like the <strong>2FHD0320C</strong> have this feature built-in. The implementation involves a few key external components:</p>
+                        <ul>
+                            <li><strong>High-Voltage Diode:</strong> A high-voltage blocking diode is connected between the IGBT's collector and the DESAT detection pin on the driver. This diode prevents the high collector voltage from reaching the driver when the IGBT is off.</li>
+                            <li><strong>Blanking Capacitor:</strong> A small capacitor on the DESAT pin, along with an internal current source in the driver, sets the blanking time. This time must be long enough to prevent false trips during normal turn-on but short enough to protect the IGBT. The datasheet for the specific driver provides guidance on selecting this capacitor.</li>
+                        </ul>
+
+                        <h2>Common Pitfalls</h2>
+                        <ul>
+                            <li><strong>Incorrect Blanking Time:</strong> Too short, and you get false trips. Too long, and your IGBT is destroyed. Always follow the datasheet recommendations.</li>
+                            <li><strong>PCB Layout:</strong> The connection from the high-voltage diode to the DESAT pin should be as short as possible to minimize noise pickup, which could cause false tripping.</li>
+                            <li><strong>Diode Choice:</strong> The diode must have a voltage rating higher than the DC-link voltage and must have a fast reverse recovery time to function correctly.</li>
+                        </ul>
+                    </div>
+                    <aside class="article-sidebar"><!-- Sidebar --></aside>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="main-footer"><!-- Footer --></footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

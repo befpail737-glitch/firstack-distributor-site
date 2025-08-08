@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiC MOSFET Driving Challenges & Solutions | Technical Guide</title>
+    <meta name="description" content="An application note discussing the challenges of driving SiC MOSFETs, such as fast switching speeds and high dV/dt, and how Firstack SiC drivers solve them.">
+    <meta name="keywords" content="sic mosfet driving, sic challenges, sic driver, high dv/dt, cmti">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="../../images/logo/favicon.svg" type="image/svg+xml">
+    <!-- Schema and other head content... -->
+</head>
+<body>
+    <header class="main-header"><!-- Header --></header>
+    <main>
+        <article>
+            <section class="article-header" style="background-image: url('../../images/blog/pv-banner.jpg');">
+                <div class="container">
+                    <div class="article-meta"><span>SiC Application Technology</span></div>
+                    <h1>SiC MOSFET Driving: Challenges and Solutions</h1>
+                    <p class="article-summary">Unlocking the performance of Silicon Carbide requires a driver that can handle its unique demands. Here's what you need to know.</p>
+                </div>
+            </section>
+            <section class="article-content-section">
+                <div class="container article-container">
+                    <div class="article-body">
+                        <p>Silicon Carbide (SiC) MOSFETs promise a revolution in power electronics with lower losses, higher switching frequencies, and greater power density. However, harnessing these benefits requires overcoming several gate driving challenges that are less pronounced in traditional silicon IGBTs.</p>
+
+                        <h2>Challenge 1: High Switching Speed (dV/dt and di/dt)</h2>
+                        <p>SiC devices can switch on and off in nanoseconds, creating extremely high rates of change in voltage (dV/dt) and current (di/dt). This has two major consequences:</p>
+                        <ul>
+                            <li><strong>Parasitic Turn-on:</strong> High dV/dt across a device in a half-bridge can induce a voltage spike on the gate of the complementary (off-state) device through the Miller capacitance (Cgd). If this spike exceeds the MOSFET's threshold voltage, it can cause a parasitic turn-on, leading to a destructive shoot-through event.</li>
+                            <li><strong>Voltage Overshoot:</strong> High di/dt acting on parasitic inductance in the power loop (V = L * di/dt) creates large voltage overshoots that can damage the device.</li>
+                        </ul>
+                        <p><strong>Solution:</strong> A specialized SiC driver like the <a href="../../products/driver-cores/2fsc0110.html">Firstack 2FSC0110</a> provides a strong negative turn-off voltage (e.g., -5V). This creates a larger buffer, ensuring the gate stays firmly off. Additionally, a low-inductance layout and a driver with a dedicated "Kelvin" source connection are crucial.</p>
+
+                        <h2>Challenge 2: Common-Mode Transient Immunity (CMTI)</h2>
+                        <p>The high dV/dt also creates significant common-mode noise. This noise can corrupt data transmission across the driver's isolation barrier, leading to missed or false switching commands. A driver's ability to withstand this is measured by its CMTI rating.</p>
+                        <p><strong>Solution:</strong> Use a gate driver with a very high CMTI rating, typically >100 kV/µs. Firstack's SiC-specific drivers are designed and tested to meet these stringent requirements, often utilizing fiber optic interfaces for the ultimate noise immunity.</p>
+
+                        <h2>Challenge 3: Precise Gate Voltage Requirements</h2>
+                        <p>SiC MOSFETs are sensitive to gate voltage. To achieve the lowest possible on-state resistance (Rds(on)), the gate must be driven to a high positive voltage, typically +18V to +20V. An insufficient gate voltage will result in higher conduction losses. At the same time, the absolute maximum gate voltage is often lower than for IGBTs, so precision is key.</p>
+                        <p><strong>Solution:</strong> A purpose-built SiC driver provides a stable, regulated gate voltage supply (e.g., +20V/-5V) with low tolerance, ensuring optimal and safe operation across all conditions.</p>
+
+                        <h2>Conclusion</h2>
+                        <p>While driving SiC MOSFETs presents unique challenges, they are readily solved with a properly designed gate driver. As an authorized Firstack supplier, we offer drivers specifically engineered to meet these demands, allowing you to fully leverage the game-changing benefits of SiC technology.
+                        </p>
+                    </div>
+                    <aside class="article-sidebar"><!-- Sidebar --></aside>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="main-footer"><!-- Footer --></footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

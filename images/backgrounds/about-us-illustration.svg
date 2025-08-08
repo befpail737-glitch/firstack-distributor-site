@@ -1,0 +1,23 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect fill="#FFF" stroke="#CCC" x="1" y="1" width="798" height="398" rx="10"/>
+  <!-- Main Blocks -->
+  <g text-anchor="middle" font-family="Arial" font-size="16">
+    <rect x="50" y="150" width="120" height="80" fill="#e3f2fd" stroke="#005A9C" rx="5"/>
+    <text x="110" y="190">Controller</text>
+    <rect x="250" y="150" width="180" height="80" fill="#e3f2fd" stroke="#005A9C" rx="5"/>
+    <text x="340" y="180">Firstack</text>
+    <text x="340" y="200">Gate Driver</text>
+    <rect x="510" y="120" width="120" height="140" fill="#e3f2fd" stroke="#005A9C" rx="5"/>
+    <text x="570" y="185">Power Stage</text>
+    <text x="570" y="205">(IGBT/SiC)</text>
+    <rect x="700" y="150" width="80" height="80" fill="#e3f2fd" stroke="#005A9C" rx="5"/>
+    <text x="740" y="190">Load</text>
+  </g>
+  <!-- Arrows -->
+  <g fill="none" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)">
+     <defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" /></marker></defs>
+     <path d="M170 190 H 250"/>
+     <path d="M430 190 H 510"/>
+     <path d="M630 190 H 700"/>
+  </g>
+</svg>
