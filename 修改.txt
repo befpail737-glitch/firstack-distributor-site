@@ -1,0 +1,23 @@
+修改如下：
+打开您本地项目的所有 .html 文件。 您可以使用一个好的代码编辑器（如 VS Code）的“全局搜索和替换”功能来批量完成这个操作。
+修改CSS链接：
+查找所有： href="css/style.css"
+替换为： href="/css/style.css" (注意前面的斜杠)
+查找所有： href="../css/style.css"
+替换为： href="/css/style.css"
+查找所有： href="../../css/style.css"
+替换为： href="/css/style.css"
+修改JavaScript链接：
+查找所有： src="js/main.js" -> 替换为： src="/js/main.js"
+查找所有： src="../js/main.js" -> 替换为： src="/js/main.js"
+查找所有： src="../../js/main.js" -> 替换为： src="/js/main.js"
+对 tabs.js 做同样的操作。
+修改图片和Logo链接：
+查找所有： src="images/... -> 替换为： src="/images/...
+查找所有： src="../images/... -> 替换为： src="/images/...
+查找所有： src="../../images/... -> 替换为： src="/images/...
+修改导航和所有页面间链接：
+查找所有： href="index.html" -> 替换为： href="/"
+查找所有： href="products.html" -> 替换为： href="/products.html"
+查找所有： href="solutions/1500v-solar-pcs-solution.html" -> 替换为： href="/solutions/1500v-solar-pcs-solution.html"
+原则： 确保所有页面间的跳转链接 href 都以 / 开头（或者在根目录的页面可以用相对路径）。最简单的方法是所有链接都用根相对路径。
