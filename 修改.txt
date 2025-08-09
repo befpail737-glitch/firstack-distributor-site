@@ -1,0 +1,25 @@
+将 "YourCompanyName" 替换为 "LiTong" 需要修改几个关键文件。
+必须检查和修改的文件列表：
+1. index.html
+Title 标签: <title>... | YourCompanyName</title> -> <title>... | LiTong</title>
+Description Meta 标签: <meta name="description" content="YourCompanyName is..."> -> <meta name="description" content="LiTong is...">
+Logo Alt 文本: <img src="/images/logo/logo.svg" alt="YourCompanyName Logo..."> -> <img src="/images/logo/logo.svg" alt="LiTong Logo...">
+页脚 (Footer):
+<h4>About YourCompanyName</h4> -> <h4>About LiTong</h4>
+&copy; 2025 YourCompanyName. All Rights Reserved. -> &copy; 2025 LiTong. All Rights Reserved.
+2. 所有其他 .html 文件
+about.html
+contact.html
+products.html
+solutions.html, support.html, news.html (以及它们所有的详情页)
+都需要修改它们的 <title>, <meta name="description"> 和页脚部分。
+3. images/logo/logo.svg (最重要)
+打开 /images/logo/logo.svg 文件。它是一个文本文件。
+找到这一行：
+<text ...>YourCompany</text>
+将其修改为：
+<text ...>LiTong</text>
+这样您的网站Logo就会显示 "LiTong"。
+4. admin/index.html
+Title 标签: <title>Admin Login | YourCompanyName CMS</title> -> <title>Admin Login | LiTong CMS</title>
+Logo Alt 文本: <img src="../images/logo/logo.svg" alt="YourCompanyName Logo"> -> <img src="../images/logo/logo.svg" alt="LiTong Logo">
