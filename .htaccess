@@ -1,0 +1,16 @@
+# Redirect www to non-www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.firstack-distributor\.com [NC]
+RewriteRule ^(.*)$ https://firstack-distributor.com/$1 [L,R=301]
+
+# Redirect index.html to root
+RewriteCond %{THE_REQUEST} /index\.html[?#\s] [NC]
+RewriteRule ^(.*?)index\.html?$ /$1 [L,R=301]
+
+# Canonical URLs for main pages
+RewriteRule ^products/$ /products.html [L,R=301]
+RewriteRule ^solutions/$ /solutions.html [L,R=301]
+RewriteRule ^support/$ /support.html [L,R=301]
+RewriteRule ^news/$ /news.html [L,R=301]
+RewriteRule ^about/$ /about.html [L,R=301]
+RewriteRule ^contact/$ /contact.html [L,R=301]
