@@ -228,6 +228,175 @@ section { padding: 80px 0; }
 .contact-info-list div { display: flex; flex-direction: column; }
 .contact-info-list strong { font-size: 1.1rem; margin-bottom: 2px; }
 
+/* --- Quick Contact Section --- */
+.quick-contact-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.quick-contact-wrapper {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quick-contact-wrapper h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.quick-contact-wrapper p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.quick-contact-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quick-contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 30px;
+    background: var(--light-color);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--text-color);
+    min-width: 200px;
+    border: 2px solid transparent;
+}
+
+.quick-contact-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    color: var(--text-color);
+}
+
+.quick-contact-btn.whatsapp:hover {
+    border-color: #25D366;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+}
+
+.quick-contact-btn.wechat:hover {
+    border-color: #07C160;
+    background: linear-gradient(135deg, #07C160 0%, #00A862 100%);
+    color: white;
+}
+
+.quick-contact-btn img {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.quick-contact-btn.whatsapp:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.quick-contact-btn.wechat:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.platform {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.number {
+    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+    opacity: 0.8;
+}
+
+/* --- Contact Region Styling --- */
+.contact-intro {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-intro h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-region {
+    margin-bottom: 60px;
+}
+
+.contact-region h3 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-card {
+    background: var(--light-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-card h4 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.contact-details p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.contact-details strong {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.contact-details a {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.contact-details a:hover {
+    color: var(--primary-color);
+}
+
 /* --- Footer --- */
 .main-footer { background-color: var(--dark-color); color: #ccc; padding: 50px 0 0 0; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; padding-bottom: 40px; }
@@ -254,6 +423,8 @@ section { padding: 80px 0; }
     .article-container, .about-grid, .contact-grid { grid-template-columns: 1fr; }
     .article-sidebar { margin-top: 50px; order: -1; }
     .about-image { order: -1; margin-bottom: 30px; }
+    .quick-contact-buttons { flex-direction: column; align-items: center; }
+    .quick-contact-btn { min-width: 280px; }
 }
 @media (max-width: 768px) {
     section { padding: 60px 0; }
