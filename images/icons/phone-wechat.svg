@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60" fill="none">
+  <defs>
+    <linearGradient id="wechatPhoneBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#07C160;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#00A862;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="60" rx="30" fill="url(#wechatPhoneBg)" stroke="#07C160" stroke-width="1"/>
+  
+  <!-- WeChat Icon -->
+  <circle cx="30" cy="30" r="15" fill="#07C160"/>
+  <ellipse cx="26" cy="25" rx="8" ry="6" fill="#fff"/>
+  <circle cx="23" cy="23.5" r="1.5" fill="#07C160"/>
+  <circle cx="29" cy="23.5" r="1.5" fill="#07C160"/>
+  <ellipse cx="34" cy="32" rx="6" ry="4.5" fill="#fff"/>
+  <circle cx="31.5" cy="31" r="1" fill="#07C160"/>
+  <circle cx="36.5" cy="31" r="1" fill="#07C160"/>
+  
+  <!-- Phone Number Text -->
+  <text x="55" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#07C160">WeChat</text>
+  <text x="55" y="42" font-family="Courier, monospace" font-size="12" fill="#666">+86 186 1251 8271</text>
+</svg>
